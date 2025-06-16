@@ -16,7 +16,7 @@ app = Flask('loginsystem')
 
 app.secret_key = "123456789"
 
-uri= "mongodb+srv://lauvacat:Ow42onZpO4fqruxj@cluster0.7fifn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri= ###
 
 client = pymongo.MongoClient(uri, tls=True, tlsAllowInvalidCertificates=True)
 db = client.loginsystem
