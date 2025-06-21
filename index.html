@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Explore</title>
+  <title>Explore</title> <!-- Page title shown in browser tab -->
 
+
+  <!--bootstrap components and layout used for css-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     body, html {
       height: 100%;
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, sans-serif; /* sets default font */
     }
     .bg-image {
-      background: url('your-image.jpg') no-repeat center center/cover;
+      background: url('your-image.jpg') no-repeat center center/cover; /* background image to cover the whole screen (didn't set) */
       height: 100%;
       width: 100%;
       position: absolute;
-      z-index: -1;
+      z-index: -1; /* sends image behind main content */
     }
     .text-overlay {
       position: absolute;
@@ -39,9 +41,11 @@
   </style>
 </head>
 <body>
-
+<!--background image for full-page -->
 <div class="bg-image"></div>
 
+
+<!-- main container, vertically fills screen and aligns items to the right -->
 <div class="container d-flex align-items-center justify-content-end min-vh-100">
   <div class="text-overlay">
     <h1 class="fw-bold">Let us explore the world...</h1>
@@ -50,15 +54,19 @@
 <!--login to home.html-->
   <div class="login-card">
     <h2 class="text-center mb-4">Explore</h2>
+    <!-- uses post method for backend (app.py) -->
     <form class="d-flex flex-column align-items-center" method = "POST">
       <div class="mb-3 w-100">
+        <!-- email from registration -->
         <input type="email" name = "email" class="form-control text-center" placeholder="Email" required>
       </div>
       <div class="mb-3 w-100">
+        <!-- password for their email -->
         <input type="password" name = "password" class="form-control text-center" placeholder="Password" required>
       </div>
       <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
       <hr class="w-100">
+      <!-- used to split the login and sign up -->
       <p>Don't have an account?</p>
       <button type="button" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
     </form>
@@ -68,32 +76,36 @@
 <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
+      <!-- modal header with close button -->
       <div class="modal-header">
         <h5 class="modal-title" id="signupModalLabel">Create Account</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
+      <!-- modal body for sign-up form-->
       <div class="modal-body">
         <!--uses post method to send data to app.py-->
         <form method = "post"> 
           <div class="mb-3">
+            <!-- username input -->
             <input type="text" name = "username"class="form-control" placeholder="Full Name" required>
           </div>
           <div class="mb-3">
+            <!--email input -->
             <input type="email" name = "email" class="form-control" placeholder="Email" required>
           </div>
           <div class="mb-3">
+            <!-- password input -->
             <input type="password" name = "password" class="form-control" placeholder="Password" required>
           </div>
-          <div class="mb-3">
-            <input type="password" name = "password" class="form-control" placeholder="Confirm Password" required>
-          </div>
+          <!-- submit button for registration -->
           <button type = "submit" class="btn btn-primary w-100">Sign Up</button>
         </form>
       </div>
     </div>
   </div>
 </div>
-
+<!-- bootstrap js bundle with modal and components -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
